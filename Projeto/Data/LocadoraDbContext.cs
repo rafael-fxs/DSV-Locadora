@@ -14,6 +14,8 @@ public class LocadoraDbContext : DbContext
     public DbSet<Locacao> Locacoes { get; set; }
     public DbSet<Cliente> Cliente { get; set; }
     public DbSet<Funcionario> Funcionario { get; set; }
+    public DbSet<Pedido> Pedido { get; set; }
+    public DbSet<Reserva> Reserva { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

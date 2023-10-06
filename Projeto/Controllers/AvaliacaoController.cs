@@ -18,8 +18,8 @@ public class AvaliacaoController : ControllerBase
     [Route("cadastrar")]
     public async Task<ActionResult> Cadastrar(Avaliacao avaliacao)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         await _dbContext.AddAsync(avaliacao);
         await _dbContext.SaveChangesAsync();
         return Created("", avaliacao);
@@ -29,17 +29,17 @@ public class AvaliacaoController : ControllerBase
     [Route("listar")]
     public async Task<ActionResult<IEnumerable<Avaliacao>>> Listar()
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         return await _dbContext.Avaliacao.ToListAsync();
     }
 
-     [HttpGet]
+    [HttpGet]
     [Route("listarPeloCliente/{clienteId}")]
     public async Task<ActionResult<IEnumerable<Avaliacao>>> ListarPeloCliente(int clienteId)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacoes = await _dbContext.Avaliacao
             .Where(e => e.ClienteId == clienteId)
             .ToListAsync();
@@ -52,10 +52,10 @@ public class AvaliacaoController : ControllerBase
     [Route("buscar/{id}")]
     public async Task<ActionResult<Avaliacao>> Buscar(int id)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacaoTemp = await _dbContext.Avaliacao.FindAsync(id);
-        if(avaliacaoTemp is null) return NotFound();
+        if (avaliacaoTemp is null) return NotFound();
         return avaliacaoTemp;
     }
 
@@ -63,10 +63,10 @@ public class AvaliacaoController : ControllerBase
     [Route("buscarPeloPedido/{pedidoId}")]
     public async Task<ActionResult<Avaliacao>> BuscarPeloPedido(int pedidoId)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacaoTemp = await _dbContext.Avaliacao.FirstOrDefaultAsync(a => a.PedidoId == pedidoId);
-        if(avaliacaoTemp is null) return NotFound();
+        if (avaliacaoTemp is null) return NotFound();
         return avaliacaoTemp;
     }
 
@@ -74,11 +74,11 @@ public class AvaliacaoController : ControllerBase
     [Route("alterar")]
     public async Task<ActionResult> Alterar(Avaliacao avaliacao)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacaoTemp = await _dbContext.Avaliacao.FindAsync(avaliacao.Id);
-        if(avaliacaoTemp is null) return NotFound();
-        _dbContext.Entry(avaliacaoTemp).State = EntityState.Detached;       
+        if (avaliacaoTemp is null) return NotFound();
+        _dbContext.Entry(avaliacaoTemp).State = EntityState.Detached;
         _dbContext.Avaliacao.Update(avaliacao);
         await _dbContext.SaveChangesAsync();
         return Ok();
@@ -88,10 +88,10 @@ public class AvaliacaoController : ControllerBase
     [Route("mudarComentario/{id}")]
     public async Task<ActionResult> MudarComentario(int id, [FromForm] string comentario)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacaoTemp = await _dbContext.Avaliacao.FindAsync(id);
-        if(avaliacaoTemp is null) return NotFound();
+        if (avaliacaoTemp is null) return NotFound();
         avaliacaoTemp.Comentario = comentario;
         await _dbContext.SaveChangesAsync();
         return Ok();
@@ -101,10 +101,10 @@ public class AvaliacaoController : ControllerBase
     [Route("mudarClassificacao/{id}")]
     public async Task<ActionResult> MudarClassificacao(int id, [FromForm] int classificacao)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacaoTemp = await _dbContext.Avaliacao.FindAsync(id);
-        if(avaliacaoTemp is null) return NotFound();
+        if (avaliacaoTemp is null) return NotFound();
         avaliacaoTemp.Classificacao = classificacao;
         await _dbContext.SaveChangesAsync();
         return Ok();
@@ -114,10 +114,10 @@ public class AvaliacaoController : ControllerBase
     [Route("excluir/{id}")]
     public async Task<ActionResult> Excluir(int id)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacaoTemp = await _dbContext.Avaliacao.FindAsync(id);
-        if(avaliacaoTemp is null) return NotFound();
+        if (avaliacaoTemp is null) return NotFound();
         _dbContext.Remove(avaliacaoTemp);
         await _dbContext.SaveChangesAsync();
         return Ok();
@@ -127,10 +127,10 @@ public class AvaliacaoController : ControllerBase
     [Route("excluirPeloPedido/{pedidoId}")]
     public async Task<ActionResult> ExcluirPeloPedido(int pedidoId)
     {
-        if(_dbContext is null) return NotFound();
-        if(_dbContext.Avaliacao is null) return NotFound();
+        if (_dbContext is null) return NotFound();
+        if (_dbContext.Avaliacao is null) return NotFound();
         var avaliacaoTemp = await _dbContext.Avaliacao.FirstOrDefaultAsync(a => a.PedidoId == pedidoId);
-        if(avaliacaoTemp is null) return NotFound();
+        if (avaliacaoTemp is null) return NotFound();
         _dbContext.Remove(avaliacaoTemp);
         await _dbContext.SaveChangesAsync();
         return Ok();
