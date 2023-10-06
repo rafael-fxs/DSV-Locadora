@@ -1,5 +1,4 @@
 using System.ComponentModel.DataAnnotations;
-
 namespace Locadora.Models;
 
 public class Endereco
