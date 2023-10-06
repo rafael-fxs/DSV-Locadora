@@ -6,6 +6,8 @@ public class LocadoraDbContext : DbContext
 {
     public DbSet<Endereco>? Endereco { get; set; }
     public DbSet<Avaliacao>? Avaliacao { get; set; }
+    public DbSet<AssinaturaPlano>? Assinaturas { get; set; }
+    public DbSet<Fornecedor>? Fornecedores { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

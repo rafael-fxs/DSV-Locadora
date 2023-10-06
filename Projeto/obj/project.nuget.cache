@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ogqg0ZRYqluRZzncbZ9BCETy6NAOo6mDNHX04KmoQSuPM05K/RZNDtroqLQxKexmypbV3Y+IxAH86/xPhZEWdQ==",
+  "dgSpecHash": "hcCQepgAZM6HIEBAvSXQH14Zmm7VLhNGXGqE0WHX6QUofEbMyMwlwQ8j4nuESEzfAIIuW2/i49fhzxQzYrbpyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\rafa_\\Desktop\\Locadora\\Locadora.csproj",
+  "projectFilePath": "C:\\Users\\rafa_\\Desktop\\Locadora\\Projeto\\Locadora.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\rafa_\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\rafa_\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.11\\microsoft.aspnetcore.openapi.7.0.11.nupkg.sha512",

@@ -6035,11 +6035,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\rafa_\\Desktop\\Locadora\\Locadora.csproj",
+      "projectUniqueName": "C:\\Users\\rafa_\\Desktop\\Locadora\\Projeto\\Locadora.csproj",
       "projectName": "Locadora",
-      "projectPath": "C:\\Users\\rafa_\\Desktop\\Locadora\\Locadora.csproj",
+      "projectPath": "C:\\Users\\rafa_\\Desktop\\Locadora\\Projeto\\Locadora.csproj",
       "packagesPath": "C:\\Users\\rafa_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\rafa_\\Desktop\\Locadora\\obj\\",
+      "outputPath": "C:\\Users\\rafa_\\Desktop\\Locadora\\Projeto\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\rafa_\\AppData\\Roaming\\NuGet\\NuGet.Config"
