@@ -10,6 +10,8 @@ public class LocadoraDbContext : DbContext
     public DbSet<Fornecedor>? Fornecedores { get; set; }
     public DbSet<Filmes>? Filmes { get; set; }
     public DbSet<Jogos>? Jogos { get; set; }
+    public DbSet<Pagamento> Pagamentos { get; set; }
+    public DbSet<Locacao> Locacoes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
